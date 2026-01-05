@@ -1,0 +1,36 @@
+<ion-content>
+<ion-button expand="block"(click)="showToast()"> Show Toast</ion-button>
+</ion-content>
+
+
+Home ts 
+
+constructor(private toastctrl:ToastController) {}
+async showToast(){
+  let loading=await this.toastctrl.create({
+    message:'Please wait...',
+    position:'top',
+    color:'danger',
+    duration:3000,
+    buttons:[
+      {
+      side:'start',
+      icon:'person',
+      text:'profile',
+      handler:()=>{
+        console.log('Show profile ');
+      }
+    },
+    {
+      icon:'close-circle',
+      role:'cancel',
+    }
+  ],
+  cssClass:'ion-text-center'
+
+    
+  });
+  await loading.present();
+  
+}
+}
