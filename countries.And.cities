@@ -1,0 +1,58 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      My First App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-item>
+  <ion-label>Countries</ion-label>
+  <ion-select placeholder="country" (ionChange)="selectCountry($event)">
+    <ion-select-option *ngFor="let country of countries, let i=index" [value]="i">
+      {{country.name}}
+    </ion-select-option>
+  </ion-select>
+</ion-item>
+<ion-item>
+  <ion-label>Cities</ion-label>
+  <ion-select placeholder="city" [(ngModel)]="selectedCity">
+    <ion-select-option *ngFor="let city of cities" [value]="city">
+      {{city}}
+    </ion-select-option>
+  </ion-select>
+</ion-item>
+<ion-button expand="block" (click)="save()">Save</ion-button>
+</ion-content>
+
+--------------------------Home TS----------------------------
+
+export class HomePage {
+countries=[{
+  name:"Egypt",
+  cities:["Cairo","Alexandria"]
+},
+{  name:"KSA",
+  cities:["Riyadh","Jeddah"]
+},
+{
+  name:"USA",
+  cities:["New York","Los Angeles"]
+}
+];
+ 
+selectedCountry;
+selectedCity;
+cities=[];
+  constructor() {} 
+selectCountry(ev){
+  let country=this.countries[ev.detail.value]
+  this.cities=country.cities;
+  this.selectedCountry=country.name;
+}
+ save(){
+  console.log('selected country is :'+this.selectedCountry);
+  console.log('selected city is :'+this.selectedCity);
+ }
+}
