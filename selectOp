@@ -1,0 +1,110 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      My First App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <ion-item>
+<ion-label>choose your favorite nationality </ion-label>
+<ion-select interface="action-sheet" placeholder="Nationality">
+  <ion-select-option value="Egypt" >Egypt</ion-select-option>
+  <ion-select-option value="KSA" >KSA</ion-select-option>
+  <ion-select-option value="USA" >USA</ion-select-option>
+</ion-select>
+</ion-item>
+</ion-content>
+
+----------------------------------------------------------------------------------------------
+
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      My First App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <ion-item>
+<ion-label>choose your favorite nationality </ion-label>
+<ion-select interface="alert" placeholder="Nationality" cancelText="cancel" okText="confirm">
+  <ion-select-option value="Egypt" >Egypt</ion-select-option>
+  <ion-select-option value="KSA" >KSA</ion-select-option>
+  <ion-select-option value="USA" >USA</ion-select-option>
+</ion-select>
+</ion-item>
+
+
+
+-----------------------------------------------------------------------------------------------------------
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      My First App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <ion-item>
+<ion-label>choose your favorite nationality </ion-label>
+<ion-select [(ngModel)]="national" interface="popover" placeholder="Nationality" cancelText="cancel" okText="confirm">
+  <ion-select-option value="Egypt" >Egypt</ion-select-option>
+  <ion-select-option value="KSA" >KSA</ion-select-option>
+  <ion-select-option value="USA" >USA</ion-select-option>
+</ion-select>
+</ion-item>
+<ion-button (click)="loggedin()" expand="block">Save</ion-button>
+</ion-content>
+------------------------------------home ts------------------------------------
+
+export class HomePage {
+ national:boolean;
+ 
+  constructor() {} 
+
+  loggedin(){
+    
+    console.log(this.national);
+  
+  }
+}
+
+------------------------------------------------------------------------------------------
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      My First App
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+ <ion-item>
+<ion-label>choose your favorite nationality </ion-label>
+<ion-select (ionChange)="loggedin($event)" interface="popover" placeholder="Nationality" cancelText="cancel" okText="confirm">
+  <ion-select-option value="Egypt" >Egypt</ion-select-option>
+  <ion-select-option value="KSA" >KSA</ion-select-option>
+  <ion-select-option value="USA" >USA</ion-select-option>
+</ion-select>
+</ion-item>
+</ion-content>
+-------------------------------------home ts---------------------------------------
+
+export class HomePage {
+ national
+ 
+  constructor() {} 
+
+  loggedin(ev){
+    
+    console.log(ev.detail.value);
+  
+  }
+}
