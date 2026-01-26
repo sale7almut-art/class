@@ -15,3 +15,11 @@
   </ion-item>
 <ion-button expand="block" (click)="savedGender()">Save</ion-button>
 </ion-radio-group>
+
+-------------------------------home ts-------------------------
+
+export class HomePage {
+gender;
+savedGender(){
+  console.log(this.gender);
+}
