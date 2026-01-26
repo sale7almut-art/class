@@ -1,0 +1,17 @@
+
+<ion-list>
+  <ion-list-header>
+    <ion-label>Choose gender</ion-label>
+  </ion-list-header>
+</ion-list>
+<ion-radio-group [(ngModel)]="gender">
+  <ion-item>
+    <ion-label>Male</ion-label>
+    <ion-radio color="primary" slot="start" value="male"></ion-radio>
+  </ion-item>
+   <ion-item>
+    <ion-label>Female</ion-label>
+    <ion-radio color="danger" slot="start" value="female"></ion-radio>
+  </ion-item>
+<ion-button expand="block" (click)="savedGender()">Save</ion-button>
+</ion-radio-group>
