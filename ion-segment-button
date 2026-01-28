@@ -1,0 +1,146 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      My First App
+    </ion-title>
+  </ion-toolbar>
+  
+ 
+</ion-header>
+
+<ion-content>
+</ion-content>
+
+<ion-footer>
+   <ion-toolbar>
+    <ion-segment [(ngModel)]="selectedSegment" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="chats">
+        <ion-icon name="chatbubbles-outline"></ion-icon>
+        <ion-label>Chats</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="updates">
+        <ion-icon name="notifications-outline"></ion-icon>
+        <ion-label>updates</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="communities">
+        <ion-icon name="person"></ion-icon>
+        <ion-label>communities</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="calls">
+        <ion-icon name="call"></ion-icon>
+        <ion-label>calls</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>copyright</ion-title>
+  </ion-toolbar>
+</ion-footer>
+
+-------------------------home ts----------------------------
+
+export class HomePage {
+selectedSegment;
+segmentChanged(ev){
+  console.log(ev.target.value)
+  this.selectedSegment=ev.target.value;
+}
+  constructor() {} 
+
+}
+
+-------------------------------------------------------------------------------------------------
+
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      My First App
+    </ion-title>
+  </ion-toolbar>
+  
+ 
+</ion-header>
+
+<ion-content>
+  <div class="center">
+    <div class="chats" *ngIf="selectedSegment=='chats'">
+      <p>chats works!</p>
+    </div>
+    <div class="updates" *ngIf="selectedSegment=='updates'">
+      <p>updates works!</p>
+    </div>
+    <div class="communities" *ngIf="selectedSegment=='communities'">
+      <p>communities works!</p>
+    </div>
+    <div class="calls" *ngIf="selectedSegment=='calls'">
+      <p>calls works!</p>
+    </div>
+  </div>
+  
+</ion-content>
+
+<ion-footer>
+   <ion-toolbar>
+    <ion-segment [(ngModel)]="selectedSegment" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="chats">
+        <ion-icon name="chatbubbles-outline"></ion-icon>
+        <ion-label>Chats</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="updates">
+        <ion-icon name="notifications-outline"></ion-icon>
+        <ion-label>updates</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="communities">
+        <ion-icon name="person"></ion-icon>
+        <ion-label>communities</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="calls">
+        <ion-icon name="call"></ion-icon>
+        <ion-label>calls</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>copyright</ion-title>
+  </ion-toolbar>
+</ion-footer>
+-----------------------------------css-------------------------
+.center{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  color: yellowgreen;
+}
+
+----------------------------------home ts---------------------------
+
+import { call, text } from 'ionicons/icons';
+import { Component , } from '@angular/core';
+import { AlertController, ActionSheetController, ToastController, LoadingController, IonHeader, IonToolbar, IonTitle, IonContent, IonItem, IonLabel, IonFooter, IonIcon, IonItemDivider, IonList, IonItemSliding, IonItemOption, IonItemOptions, IonImg, IonAvatar, IonThumbnail, IonSpinner, IonSkeletonText, IonProgressBar, IonRefresher, IonRefresherContent, IonButton, IonInput, IonTextarea, IonCheckbox, IonSelect, IonSelectOption, IonRadio, IonRadioGroup, IonListHeader, IonDatetime, IonSegment, IonSegmentButton } from '@ionic/angular/standalone';
+import { CommonModule, NgForOf, NgIf } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Icon } from 'ionicons/dist/types/components/icon/icon';
+@Component({
+  selector: 'app-home',
+  templateUrl: 'home.page.html',
+  styleUrls: ['home.page.scss'],
+  imports: [IonSegmentButton, IonSegment, IonRadioGroup, FormsModule, IonButton, IonItemOptions, IonFooter, IonLabel, IonItem, IonHeader, IonToolbar, IonTitle, IonContent, IonIcon, IonItemDivider, IonList, IonItemSliding, IonItemOption, NgForOf, IonImg, IonAvatar, IonThumbnail, IonSpinner, NgIf, IonSkeletonText, IonProgressBar, IonRefresher, IonRefresherContent, IonInput, IonTextarea, IonCheckbox, IonSelect, IonSelectOption, IonRadio, IonListHeader, IonDatetime],
+})
+export class HomePage {
+selectedSegment;
+segmentChanged(ev){
+  console.log(ev.target.value)
+  this.selectedSegment=ev.target.value;
+}
+  constructor() {} 
+
+}
