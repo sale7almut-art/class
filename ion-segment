@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      My First App
+    </ion-title>
+  </ion-toolbar>
+  
+ 
+</ion-header>
+
+<ion-content>
+</ion-content>
+
+<ion-footer>
+   <ion-toolbar>
+    <ion-segment [(ngModel)]="selectedSegment" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="chats">
+        <ion-label>Chats</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="updates">
+        <ion-label>updates</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="communities">
+        <ion-label>communities</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="calls">
+        <ion-label>calls</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>copyright</ion-title>
+  </ion-toolbar>
+</ion-footer>
+
+-----------------------------------home ts ---------------------------------
+
+
+export class HomePage {
+selectedSegment;
+segmentChanged(ev){
+  console.log(ev.target.value)
+  this.selectedSegment=ev.target.value;
+}
+  constructor() {} 
+
+}
