@@ -1,0 +1,81 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      My First App
+    </ion-title>
+  </ion-toolbar>
+  
+ 
+</ion-header>
+
+<ion-content>
+  <div >
+    <ion-item>
+      <ion-label>Mohamed Ahmed</ion-label>
+      <ion-avatar slot="start">
+        <ion-img src="../../assets/image/alnsser.jpg"></ion-img>
+      </ion-avatar>
+    </ion-item>
+     <ion-item>
+      <ion-label>Ahmed </ion-label>
+      <ion-avatar slot="start">
+        <ion-img src="../../assets/image/Chelsea_FC.svg.png"></ion-img>
+      </ion-avatar>
+    </ion-item>
+     <ion-item>
+      <ion-label>Saleh</ion-label>
+      <ion-avatar slot="start">
+        <ion-img src="../../assets/image/alnsser.jpg"></ion-img>
+      </ion-avatar>
+    </ion-item>
+     <ion-item>
+      <ion-label>Maj ds</ion-label>
+      <ion-avatar slot="start">
+        <ion-img src="../../assets/image/smartphone.jpg"></ion-img>
+      </ion-avatar>
+    </ion-item>
+    <div class="chats" *ngIf="selectedSegment=='chats'">
+      <p>chats works!</p>
+    </div>
+    <div class="updates" *ngIf="selectedSegment=='updates'">
+      <p>updates works!</p>
+    </div>
+    <div class="communities" *ngIf="selectedSegment=='communities'">
+      <p>communities works!</p>
+    </div>
+    <div class="calls" *ngIf="selectedSegment=='calls'">
+      <p>calls works!</p>
+    </div>
+  </div>
+  
+</ion-content>
+
+<ion-footer>
+   <ion-toolbar>
+    <ion-segment [(ngModel)]="selectedSegment" (ionChange)="segmentChanged($event)">
+      <ion-segment-button value="chats">
+        <ion-icon name="chatbubbles-outline"></ion-icon>
+        <ion-label>Chats</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="updates">
+        <ion-icon name="notifications-outline"></ion-icon>
+        <ion-label>updates</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="communities">
+        <ion-icon name="person"></ion-icon>
+        <ion-label>communities</ion-label>
+      </ion-segment-button>
+
+      <ion-segment-button value="calls">
+        <ion-icon name="call"></ion-icon>
+        <ion-label>calls</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    
+  </ion-toolbar>
+  <ion-toolbar>
+    <ion-title>copyright</ion-title>
+  </ion-toolbar>
+</ion-footer>
