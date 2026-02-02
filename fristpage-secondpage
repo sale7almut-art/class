@@ -1,0 +1,73 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>fristpage</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button expand="block" routerLink="/secondpage">Go to Second Page</ion-button>
+</ion-content>
+
+-------------------------secondpage----------
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/fristpage"></ion-back-button>
+    </ion-buttons>
+    <ion-title>secondpage</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">secondpage</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
+--------------------------first ts-------------------
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonButton } from '@ionic/angular/standalone';
+import { RouterLink } from '@angular/router';
+
+@Component({
+  selector: 'app-fristpage',
+  templateUrl: './fristpage.page.html',
+  styleUrls: ['./fristpage.page.scss'],
+  standalone: true,
+  imports: [CommonModule , IonicModule , RouterLink]
+})
+export class FristpagePage implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+---------------------------------------second ts ----------------------------------
+
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonicModule } from '@ionic/angular';
+import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
+
+@Component({
+  selector: 'app-secondpage',
+  templateUrl: './secondpage.page.html',
+  styleUrls: ['./secondpage.page.scss'],
+  standalone: true,
+  imports: [CommonModule , IonicModule ,]
+})
+export class SecondpagePage implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
