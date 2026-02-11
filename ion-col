@@ -1,0 +1,80 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  
+   <ion-grid>
+
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <ion-img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIhVgOF2IsjQZznRQIE_IiWaujiY3EochhgqMQj6lu1M_GgcF3V47O7P3T3QE7VzFJVVU&usqp=CAU"></ion-img>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col>
+        <ion-searchbar color="medium" placeholder="Medium"></ion-searchbar>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="6">
+        <div>1 of 2</div>
+      </ion-col>
+
+      <ion-col size="6">
+        <div>2 of 2</div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col size="4">
+        <div>1 of 3</div>
+      </ion-col>
+
+      <ion-col size="4">
+        <div>2 of 3</div>
+      </ion-col>
+
+      <ion-col size="4">
+        <div>3 of 3</div>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>
+---------------------------------css----------------------------
+
+ion-content {
+  --background: linear-gradient(135deg, #4e73df, #1cc88a);
+}
+
+ion-grid {
+  padding: 20px;
+}
+
+ion-row {
+  margin-bottom: 20px;
+}
+
+ion-col div {
+  background: white;
+  color: #333;
+  text-align: center;
+  padding: 30px 10px;
+  border-radius: 15px;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.3s ease-in-out;
+}
+
+ion-col div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+}
+
