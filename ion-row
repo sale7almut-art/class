@@ -1,0 +1,181 @@
+------------------------home html----------------------
+<ion-header translucent="true">
+  <ion-toolbar>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <ion-grid>
+    
+    <ion-row>
+      <ion-col>
+        <ion-searchbar placeholder="Search..."></ion-searchbar>
+      </ion-col>
+    </ion-row>
+
+   
+    <ion-row>
+      <ion-col size="6">
+        <ion-card-content routerLink="/about" class="card-1">
+          <div>About</div>
+        </ion-card-content>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-card-content routerLink="/contact" class="card-2">
+          <div>Contact</div>
+        </ion-card-content>
+      </ion-col>
+    </ion-row>
+
+   
+    <ion-row>
+      <ion-col size="6">
+        <ion-card-content class="card-3">
+          <div>IonCard 3</div>
+        </ion-card-content>
+      </ion-col>
+
+      <ion-col size="6">
+        <ion-card-content class="card-4">
+          <div>IonCard 4</div>
+        </ion-card-content>
+      </ion-col>
+    </ion-row>
+
+   
+    <ion-row>
+      <ion-col>
+        <ion-card>
+          <img src="https://picsum.photos/600/400" />
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>
+
+---------------------------css----------------------------
+
+ion-content {
+  --background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+
+ion-toolbar {
+  --background: transparent;
+  --color: white;
+}
+
+
+ion-searchbar {
+  --background: white;
+  border-radius: 15px;
+  padding: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+
+ion-row {
+  margin-bottom: 20px;
+}
+
+
+ion-card-content {
+  border-radius: 20px;
+  padding: 40px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  transition: 0.3s ease;
+}
+
+ion-card-content:hover {
+  transform: translateY(-8px);
+}
+
+
+.card-1 {
+  background: linear-gradient(45deg, #00c6ff, #0072ff);
+}
+
+.card-2 {
+  background: linear-gradient(45deg, #f7971e, #ffd200);
+}
+
+.card-3 {
+  background: linear-gradient(45deg, #11998e, #38ef7d);
+}
+
+.card-4 {
+  background: linear-gradient(45deg, #fc466b, #3f5efb);
+}
+
+
+ion-card img {
+  border-radius: 20px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+ 
+}
+------------------------home ts----------------------------------
+import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { IonContent, IonHeader, IonTitle, IonToolbar, IonCol, IonRow, IonGrid, IonSearchbar, IonCard, IonImg, IonCardContent } from '@ionic/angular/standalone';
+import { RouterLink } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
+@Component({
+  selector: 'app-home',
+  templateUrl: './home.page.html',
+  styleUrls: ['./home.page.scss'],
+  standalone: true,
+  imports: [CommonModule, RouterLink, IonicModule]
+})
+export class HomePage implements OnInit {
+
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+
+------------------------About html-------------------------
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">about</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
+-----------------------------contact--------------------
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons>
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">contact</ion-title>
+    </ion-toolbar>
+  </ion-header>
+</ion-content>
